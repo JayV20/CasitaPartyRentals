@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Casita Party Rentals</string>
+    <string name="label_dialog_add">Añadir</string>
+    <string name="label_dialog_cancel">Cancelar</string>
+    <string name="label_dialog_delete">Eliminar</string>
+    <!--Login-->
+    <string name="btnLogIn">Iniciar sesión</string>
+    <string name="btnSignUp">Registrarse</string>
+    <string name="til_hint_email">Correo</string>
+    <string name="til_password">Contraseña</string>
+    <string name="helper_login_email">Porfavor ingrese correo</string>
+    <string name="helper_login_password">Porfavor ingrese su contraseña</string>
+    <string name="error_login_email">Favor de introducir su correo.</string>
+    <string name="error_login_password">Favor de introducir su contraseña</string>
+    <!--Sign Up-->
+    <string name="registro_hint_nombre">Nombre</string>
+    <string name="registro_hint_apellidos">Apellidos</string>
+    <string name="registro_hint_fechaNacimiento">Fecha de nacimiento</string>
+    <string name="registro_title">Registro</string>
+
+    <string name="usa">USA</string>
+    <string name="logo_Description">Logo of the business</string>
+    <string name="about_messaggi_description">La marca Texting y el logo son propiedad de Cursos
+        Android ANT. Todos los derechos reservados.</string>
+    <string name="about_privacy">Aviso de privacidad</string>
+    <string name="about_version">Version:</string>
+    <string name="about_webSite">www.texting.cursos-android-ant.com</string>
+
+    <string name="common_error_server">Ha ocurrido un problema en el servidor, intente más tarde.</string>
+    <string name="common_label_ok">OK</string>
+    <string name="common_label_accept">Aceptar</string>
+    <string name="common_label_cancel">Cancelar</string>
+    <string name="common_label_email">Correo electrónico</string>
+    <string name="common_message_noInternet">Sin acceso a internet, verifique su conexión</string>
+    <string name="common_validate_field_required">Este campo es requerido.</string>
+    <string name="common_validate_email_invalid">Este correo no tiene un formato válido, verifique.</string>
+    <!--login-->
+
+    <string name="login_error_user_exist">Usuario nuevo, registrando&#8230;></string>
+    <string name="login_message_loading">Iniciando sesión&#8230;</string>
+    <string name="login_message_starting">Preparando todo&#8230;</string>
+    <string name="login_message_error">Imposible iniciar sesión, intente más tarde.</string>
+    <string name="login_message_success">Bienvenido %s</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
