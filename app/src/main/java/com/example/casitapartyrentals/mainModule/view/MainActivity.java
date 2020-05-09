@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.example.casitapartyrentals.R;
 
 public class MainActivity extends AppCompatActivity {
-
+//Franku estuvo aquí
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
