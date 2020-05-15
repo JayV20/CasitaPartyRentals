@@ -94,8 +94,8 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
         startActivityForResult(AuthUI.getInstance()
                 .createSignInIntentBuilder()
                 .setIsSmartLockEnabled(false)
-                .setTosAndPrivacyPolicyUrls("",
-                        "")
+                .setTosAndPrivacyPolicyUrls("www.google.com",
+                        "www.google.com")
                 .setAvailableProviders(Arrays.asList(new AuthUI.IdpConfig.EmailBuilder().build(),
                         googleIdp))
                 .setTheme(R.style.BlueTheme)
