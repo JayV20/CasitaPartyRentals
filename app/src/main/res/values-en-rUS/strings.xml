@@ -41,7 +41,14 @@
     <string name="login_message_error">Imposible iniciar sesión, intente más tarde.</string>
     <string name="login_message_loading">Iniciando sesión&#8230;</string>
     <string name="login_message_starting">Preparando todo&#8230;</string>
-    <string name="login_message_success">Bienvenido %s</string>
+    <string name="login_message_success">Welcome %s</string>
     <string name="title_activity_main">MainActivity</string>
     <!-- -->
+    <string name="btn_settings">Settings</string>
+    <string name="btn_logout">Logout</string>
+    <string name="card_title">Title</string>
+    <string name="description">Description</string>
+    <string name="price">Price</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="quantity">Quantity</string>
 </resources>

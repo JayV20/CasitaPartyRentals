@@ -26,4 +26,7 @@
     <dimen name="common_padding_mega">40dp</dimen>
     <dimen name="logo_heigth">220dp</dimen>
     <dimen name="login_message_textSize">28sp</dimen>
+    <dimen name="common_padding_ultra_mega">100dp</dimen>
+    <dimen name="til_heitgh">50dp</dimen>
+    <dimen name="cardview_image">194dp</dimen>
 </resources>
