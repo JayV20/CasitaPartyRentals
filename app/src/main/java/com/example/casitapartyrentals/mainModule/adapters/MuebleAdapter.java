@@ -22,6 +22,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MuebleAdapter extends RecyclerView.Adapter<MuebleAdapter.ViewHolder>{
     private List<Mueble> muebles;
@@ -51,6 +52,7 @@ public class MuebleAdapter extends RecyclerView.Adapter<MuebleAdapter.ViewHolder
 
         private ViewHolder(@NonNull View itemView) {
             super(itemView);
+            ButterKnife.bind(this, itemView);
             view = itemView;
         }
 
@@ -62,9 +64,6 @@ public class MuebleAdapter extends RecyclerView.Adapter<MuebleAdapter.ViewHolder
                 }
             });
         }
-    }
-    public void setUpMuebles(Mueble mueble){
-        muebles.add(mueble);
     }
 
     @NonNull
@@ -78,7 +77,6 @@ public class MuebleAdapter extends RecyclerView.Adapter<MuebleAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Mueble mueble= muebles.get(position);
-        holder.setOnClickListener(mueble,listener);
         holder.card_title.setText(mueble.getName().toString());
         holder.card_description.setText(mueble.getDescription().toString());
         RequestOptions options = new RequestOptions()

@@ -46,9 +46,9 @@ public class MainPresenterClass implements MainPresenter {
     @Override
     public void onEvent(MainEvent event) {
         switch (event.getTypeEvent()){
-            case MainEvent.SUCCESS_MUEBLES:
+            case MainEvent.MUEBLES_SUCCESS:
                 mView.hideProgress();
-                mView.getMuebles(event.getMueble());
+                mView.getMuebles(event.getMuebles());
                 break;
             case MainEvent.ERROR_NETWORK:
             case MainEvent.ERROR_DISCONNECT:

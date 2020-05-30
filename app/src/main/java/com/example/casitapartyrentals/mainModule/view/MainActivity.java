@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.casitapartyrentals.R;
 import com.example.casitapartyrentals.common.pojo.Mueble;
@@ -41,12 +42,10 @@ public class MainActivity extends AppCompatActivity implements MainView, OnItemC
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         mPresenter= new MainPresenterClass(this);
-        configAdapter();
+        mPresenter.onCreate();
     }
 
-    private void configAdapter() {
-        mAdapter= new MuebleAdapter(new ArrayList<Mueble>(),this);
-    }
+
 
     @Override
     protected void onPause() {
@@ -91,15 +90,14 @@ public class MainActivity extends AppCompatActivity implements MainView, OnItemC
     }
 
     @Override
-    public void getMuebles(Mueble mueble) {
-        mAdapter.setUpMuebles(mueble);
+    public void getMuebles(ArrayList<Mueble> muebles) {
+        mAdapter= new MuebleAdapter(muebles,this);
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(mAdapter);
     }
 
-    @Override
-    public void showDialogConfirm() {
-
-    }
     /*
     * OnItemClickListener
     * */

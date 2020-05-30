@@ -3,10 +3,12 @@ package com.example.casitapartyrentals.mainModule.model;
 import com.example.casitapartyrentals.common.pojo.Mueble;
 import com.example.casitapartyrentals.mainModule.events.MainEvent;
 import com.example.casitapartyrentals.mainModule.model.dataAccess.Authentication;
-import com.example.casitapartyrentals.mainModule.model.dataAccess.ChildMuebleCallback;
+import com.example.casitapartyrentals.mainModule.model.dataAccess.ValueMuebleCallback;
 import com.example.casitapartyrentals.mainModule.model.dataAccess.RealtimeDatabase;
 
 import org.greenrobot.eventbus.EventBus;
+
+import java.util.ArrayList;
 
 public class MainInteractorClass implements MainInteractor {
     private Authentication mAuthentication;
@@ -19,15 +21,10 @@ public class MainInteractorClass implements MainInteractor {
 
     @Override
     public void subscribeToMueble() {
-        mDatabase.subscribeToMueble(new ChildMuebleCallback() {
+        mDatabase.subscribeToMueble(new ValueMuebleCallback() {
             @Override
-            public void onAdd(Mueble mueble) {
-                post(MainEvent.SUCCESS_MUEBLES,mueble);
-            }
-
-            @Override
-            public void onChange(Mueble mueble) {
-                post(MainEvent.SUCCESS_MUEBLES,mueble);
+            public void onChange(ArrayList<Mueble> muebles) {
+                post(MainEvent.MUEBLES_SUCCESS,muebles);
             }
 
             @Override
@@ -37,15 +34,15 @@ public class MainInteractorClass implements MainInteractor {
         });
     }
 
-    private void post(int typeEvent, int resMsg, Mueble mueble){
+    private void post(int typeEvent, int resMsg, ArrayList<Mueble> muebles){
         MainEvent event= new MainEvent();
         event.setTypeEvent(typeEvent);
         event.setResMsg(resMsg);
-        event.setMueble(mueble);
+        event.setMuebles(muebles);
         EventBus.getDefault().post(event);
     }
-    private void post(int typeEvent, Mueble mueble) {
-        post(typeEvent,0,mueble);
+    private void post(int typeEvent, ArrayList<Mueble> muebles) {
+        post(typeEvent,0,muebles);
     }
     private void post(int typeEvent, int resMsg){
         post(typeEvent,resMsg,null);

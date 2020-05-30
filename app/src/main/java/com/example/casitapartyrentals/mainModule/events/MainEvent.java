@@ -2,24 +2,26 @@ package com.example.casitapartyrentals.mainModule.events;
 
 import com.example.casitapartyrentals.common.pojo.Mueble;
 
+import java.util.ArrayList;
+
 public class MainEvent {
-    public static final int SUCCESS_MUEBLES= 0;
+    public static final int MUEBLES_SUCCESS= 0;
     public static final int ERROR_NETWORK=100;
     public static final int ERROR_DISCONNECT=101;
 
-    private Mueble mueble;
+    private ArrayList<Mueble> muebles;
     private int typeEvent;
     private int resMsg;
 
     public MainEvent() {
     }
 
-    public Mueble getMueble() {
-        return mueble;
+    public ArrayList<Mueble> getMuebles() {
+        return muebles;
     }
 
-    public void setMueble(Mueble mueble) {
-        this.mueble = mueble;
+    public void setMuebles(ArrayList<Mueble> muebles) {
+        this.muebles = muebles;
     }
 
     public int getTypeEvent() {

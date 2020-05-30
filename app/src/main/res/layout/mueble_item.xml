@@ -20,8 +20,6 @@
                 android:id="@+id/card_image"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/cardview_image"
-                android:src="@drawable/ic_image"
-                android:contentDescription="@string/logo_Description"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
