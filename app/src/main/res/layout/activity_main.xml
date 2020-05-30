@@ -6,11 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".mainModule.view.MainActivity">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/mueble_item"/>
+
+    </androidx.core.widget.NestedScrollView>
+
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:hideOnScroll="true"
         android:layout_gravity='bottom'
         app:fabAlignmentMode="center"
         app:fabAnimationMode="scale"
@@ -20,6 +33,14 @@
         style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
         app:menu="@menu/bottom_appbar_menu"
         app:navigationIcon="@drawable/ic_search_black_24dp"
+        />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
         />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

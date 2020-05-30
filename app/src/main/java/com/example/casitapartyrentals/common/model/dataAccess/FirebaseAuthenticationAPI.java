@@ -30,5 +30,7 @@ public class FirebaseAuthenticationAPI {
         }
         return user;
     }
-
+    public void logout(){
+        getmFirebaseAuth().signOut();
+    }
 }
