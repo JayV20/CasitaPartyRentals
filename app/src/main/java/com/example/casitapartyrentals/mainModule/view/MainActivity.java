@@ -43,8 +43,21 @@ public class MainActivity extends AppCompatActivity implements MainView, OnItemC
         ButterKnife.bind(this);
         mPresenter= new MainPresenterClass(this);
         mPresenter.onCreate();
+        configAdapter();
+        configRecyclerView();
     }
 
+    private void configAdapter() {
+        mAdapter= new MuebleAdapter(new ArrayList<Mueble>(),this);
+
+    }
+
+    private void configRecyclerView() {
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(mAdapter);
+    }
 
 
     @Override
@@ -91,11 +104,7 @@ public class MainActivity extends AppCompatActivity implements MainView, OnItemC
 
     @Override
     public void getMuebles(ArrayList<Mueble> muebles) {
-        mAdapter= new MuebleAdapter(muebles,this);
-        recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(mAdapter);
+        mAdapter.configMuebles(muebles);
     }
 
     /*

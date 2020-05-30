@@ -19,6 +19,7 @@ import com.example.casitapartyrentals.common.pojo.Mueble;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -65,7 +66,10 @@ public class MuebleAdapter extends RecyclerView.Adapter<MuebleAdapter.ViewHolder
             });
         }
     }
-
+    public void configMuebles(ArrayList<Mueble> muebles){
+        this.muebles= muebles;
+        notifyDataSetChanged();
+    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
