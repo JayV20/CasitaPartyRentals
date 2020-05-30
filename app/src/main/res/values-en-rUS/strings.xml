@@ -48,7 +48,7 @@
     <string name="btn_logout">Logout</string>
     <string name="card_title">Title</string>
     <string name="description">Description</string>
-    <string name="price">Price</string>
+    <string name="price">Price  $ %s</string>
     <string name="add_to_cart">Add to Cart</string>
     <string name="quantity">Quantity</string>
     <string name="error_network">Favor de revisar su conexión a internet.</string>

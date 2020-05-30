@@ -1,5 +1,6 @@
 package com.example.casitapartyrentals.mainModule.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,10 +46,6 @@ public class MuebleAdapter extends RecyclerView.Adapter<MuebleAdapter.ViewHolder
         TextView card_description;
         @BindView(R.id.card_button)
         Button card_button;
-        @BindView(R.id.til_quantity)
-        TextInputLayout til_quantity;
-        @BindView(R.id.ed_quantity)
-        TextInputEditText ed_quantity;
         private View view;
 
         private ViewHolder(@NonNull View itemView) {
@@ -81,7 +78,9 @@ public class MuebleAdapter extends RecyclerView.Adapter<MuebleAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Mueble mueble= muebles.get(position);
+        holder.setOnClickListener(mueble,listener);
         holder.card_title.setText(mueble.getName().toString());
+        holder.card_price.setText(context.getString(R.string.price,Float.toString(mueble.getPrice())));
         holder.card_description.setText(mueble.getDescription().toString());
         RequestOptions options = new RequestOptions()
                 .diskCacheStrategy(DiskCacheStrategy.ALL).centerCrop();
