@@ -51,4 +51,6 @@
     <string name="price">Price</string>
     <string name="add_to_cart">Add to Cart</string>
     <string name="quantity">Quantity</string>
+    <string name="error_network">Favor de revisar su conexión a internet.</string>
+    <string name="error_disconnected">La aplicación se ha desconectado de internet.</string>
 </resources>
